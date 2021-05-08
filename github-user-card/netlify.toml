@@ -1,13 +1,13 @@
 [build]
 command = "react-scripts build"
 functions = "netlify/functions"
-publish = "/github-user-card/build"
+publish = "/build"
 
 ## Uncomment to use this redirect for Single Page Applications like create-react-app.
 ## Not needed for static site generators.
 [[redirects]]
 from = "/*"
-to = "/github-user-card/public/index.html"
+to = "/public/index.html"
 status = 200
 
 ## (optional) Settings for Netlify Dev
