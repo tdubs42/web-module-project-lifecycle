@@ -1,24 +1,22 @@
-import React from "react";
+import { Component } from "react";
 import "../stylesheets/UserCard.css";
-import axios from "axios";
+import axios         from "axios";
 
-class UserCard extends React.Component {
+class UserCard extends Component {
     constructor () {
         super();
         this.state = {
             userData: [],
-            additionalUserData: [],
-        };
+        }
     }
-
-    setUserData = res => {
+    setUserData    = res => {
         this.setState( { ...this.state.userData, userData: res.data } );
     };
-
     componentDidMount () {
         axios.get( `https://api.github.com/users/${this.props.usernameInput}` )
              .then( res => {
-                 this.setUserData( res );
+                 this.props.setUserData( res )
+                 this.setUserData( res )
              } )
              .catch( err => console.error( err ) );
     }
@@ -26,27 +24,22 @@ class UserCard extends React.Component {
     render () {
         return (
             <figure className="user-card-container">
-                <h1>{this.state.userData.name}</h1>
-                <img className='github-profile-img' src={this.state.userData.avatar_url} alt="Github profile photo"/>
+                <h1 className="user-card-header">{this.state.userData.name}</h1>
+                <img className="github-profile-img" src={this.state.userData.avatar_url}
+                     alt="Loaded from Github profile"/>
                 <div className="figure-grid-container">
-                    <a href={this.state.userData.url}>Go to their profile</a>
-                    <figcaption>Follower Count: {this.state.userData.followers}</figcaption>
-                    <a href={this.state.userData.followers_url}>Go see who's following {this.state.userData.name} on
-                                                                Github</a>
-                    <figcaption>Following Count: {this.state.userData.following}</figcaption>
-                    <a href={this.state.userData.following_url}>Go see who {this.state.userData.name} is following on
-                                                                Github</a>
-                    <figcaption>{this.state.userData.name}'s Company: {this.state.userData.company}</figcaption>
                     <figcaption>
                         {this.state.userData.name}'s Bio:
                         <br/>
                         {this.state.userData.bio}
                     </figcaption>
-                    <figcaption>Twitter Handle: {this.state.userData.twitter_username}</figcaption>
-                    <figcaption>User Repos</figcaption>
-                    <a href={this.state.userData.repos_url}>{this.state.userData.name}'s Repositories</a>
-                    <figcaption>User Organizations</figcaption>
-                    <a href={this.state.userData.organizations_url}>{this.state.userData.name}'s Organizations</a>
+                    <figcaption>Follower Count: {this.state.userData.followers}</figcaption>
+                    <figcaption>Following Count: {this.state.userData.following}</figcaption>
+                    <figcaption>Twitter Handle:
+                        <br/>
+                        {this.state.userData.twitter_username}
+                    </figcaption>
+                    <a className='user-card-link' href={this.state.userData.html_url}>Go to {this.state.userData.name}'s profile</a>
                 </div>
             </figure>
         );
