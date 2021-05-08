@@ -7,7 +7,7 @@ publish = "/github-user-card/build"
 ## Not needed for static site generators.
 [[redirects]]
 from = "/*"
-to = "/index.html"
+to = "/github-user-card/public/index.html"
 status = 200
 
 ## (optional) Settings for Netlify Dev
