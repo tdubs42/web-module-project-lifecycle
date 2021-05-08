@@ -25,28 +25,29 @@ class UserCard extends React.Component {
 
     render () {
         return (
-            <figure>
+            <figure className="user-card-container">
                 <h1>{this.state.userData.name}</h1>
-                <img src={this.state.userData.avatar_url} alt="Github profile photo"/>
-                <br/>
-                <a href={this.state.userData.url}>Go to their profile</a>
-                <figcaption>Follower Count: {this.state.userData.followers}</figcaption>
-                <a href={this.state.userData.followers_url}>Go see who's following {this.state.userData.name} on
-                                                            Github</a>
-                <figcaption>Following Count: {this.state.userData.following}</figcaption>
-                <a href={this.state.userData.following_url}>Go see who {this.state.userData.name} is following on
-                                                            Github</a>
-                <figcaption>{this.state.userData.name}'s Company: {this.state.userData.company}</figcaption>
-                <figcaption>
-                    {this.state.userData.name}'s Bio:
-                    <br/>
-                    {this.state.userData.bio}
-                </figcaption>
-                <figcaption>Twitter Handle: {this.state.userData.twitter_username}</figcaption>
-                <figcaption>User Repos</figcaption>
-                <a href={this.state.userData.repos_url}>{this.state.userData.name}'s Repositories</a>
-                <figcaption>User Organizations</figcaption>
-                <a href={this.state.userData.organizations_url}>{this.state.userData.name}'s Organizations</a>
+                <img className='github-profile-img' src={this.state.userData.avatar_url} alt="Github profile photo"/>
+                <div className="figure-grid-container">
+                    <a href={this.state.userData.url}>Go to their profile</a>
+                    <figcaption>Follower Count: {this.state.userData.followers}</figcaption>
+                    <a href={this.state.userData.followers_url}>Go see who's following {this.state.userData.name} on
+                                                                Github</a>
+                    <figcaption>Following Count: {this.state.userData.following}</figcaption>
+                    <a href={this.state.userData.following_url}>Go see who {this.state.userData.name} is following on
+                                                                Github</a>
+                    <figcaption>{this.state.userData.name}'s Company: {this.state.userData.company}</figcaption>
+                    <figcaption>
+                        {this.state.userData.name}'s Bio:
+                        <br/>
+                        {this.state.userData.bio}
+                    </figcaption>
+                    <figcaption>Twitter Handle: {this.state.userData.twitter_username}</figcaption>
+                    <figcaption>User Repos</figcaption>
+                    <a href={this.state.userData.repos_url}>{this.state.userData.name}'s Repositories</a>
+                    <figcaption>User Organizations</figcaption>
+                    <a href={this.state.userData.organizations_url}>{this.state.userData.name}'s Organizations</a>
+                </div>
             </figure>
         );
     }
