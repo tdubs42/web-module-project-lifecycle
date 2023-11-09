@@ -1,0 +1,18 @@
+repo_name: tdubs42/web-module-project-lifecycle
+report_id: c26e0b0935a05b49d7b4685d289721e5
+repo_type: Public
+timestamp: '2023-11-09T22:31:41+00:00'
+requested_by: wlongmireBloomTech
+provider: github
+branch: main
+detected_tools_count: 1
+tools:
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
